@@ -162,6 +162,7 @@
         "CV.CAL.RESET" => { MATCH_OP(E_OP_CV_CAL_RESET); };
         "IN"          => { MATCH_OP(E_OP_IN); };
         "IN.SCALE"    => { MATCH_OP(E_OP_IN_SCALE); };
+        "IN.S"    => { MATCH_OP(E_OP_IN_S); };
         "IN.CAL.MIN"  => { MATCH_OP(E_OP_IN_CAL_MIN); };
         "IN.CAL.MAX"  => { MATCH_OP(E_OP_IN_CAL_MAX); };
         "IN.CAL.RESET" => { MATCH_OP(E_OP_IN_CAL_RESET); };
@@ -171,9 +172,12 @@
         "PARAM.CAL.MAX"  => { MATCH_OP(E_OP_PARAM_CAL_MAX); };
         "PARAM.CAL.RESET" => { MATCH_OP(E_OP_PARAM_CAL_RESET); };
         "PRM"         => { MATCH_OP(E_OP_PRM); };
+        "PRM.SCALE"   => { MATCH_OP(E_OP_PRM_SCALE); };
+        "PRM.S"       => { MATCH_OP(E_OP_PRM_S); };
         "TR"          => { MATCH_OP(E_OP_TR); };
         "TR.POL"      => { MATCH_OP(E_OP_TR_POL); };
         "TR.TIME"     => { MATCH_OP(E_OP_TR_TIME); };
+        "TR.T"        => { MATCH_OP(E_OP_TR_T); };
         "TR.TOG"      => { MATCH_OP(E_OP_TR_TOG); };
         "TR.PULSE"    => { MATCH_OP(E_OP_TR_PULSE); };
         "TR.P"        => { MATCH_OP(E_OP_TR_P); };
@@ -1107,6 +1111,14 @@
 
         # stack
         "S"           => { MATCH_MOD(E_MOD_S); };
+
+        # neatopixel
+        "NP.C"        => { MATCH_OP(E_OP_NP_C); };
+        "NP.A"        => { MATCH_OP(E_OP_NP_A); };
+        "NP.AH"        => { MATCH_OP(E_OP_NP_AH); };
+        "NP.P"        => { MATCH_OP(E_OP_NP_P); };
+        "NP.PH"        => { MATCH_OP(E_OP_NP_PH); };
+        "NP.B"        => { MATCH_OP(E_OP_NP_B); };
     *|;
 
     write data;          # write any ragel data here

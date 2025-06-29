@@ -22,11 +22,12 @@ tests: main.o \
 	../src/ops/telex.o ../src/ops/variables.o  ../src/ops/whitewhale.o \
 	../src/ops/turtle.o ../src/ops/init.o ../src/ops/grid_ops.o \
 	../src/ops/matrixarchate.o ../src/ops/wslash.o ../src/ops/seed.o \
-        ../src/ops/disting.o \
+        ../src/ops/disting.o ../src/ops/neatopixel.o \
 	../src/ops/wslashtape.o ../src/ops/wslashsynth.o ../src/ops/wslashdelay.o \
 	../src/ops/wslash_shared.o ../src/ops/crow.o ../src/ops/i2c2midi.o \
 	../libavr32/src/euclidean/data.o ../libavr32/src/euclidean/euclidean.o \
 	../libavr32/src/music.o ../libavr32/src/util.o ../libavr32/src/random.o
+	
 
 	$(CC) -o $@ $^ $(CFLAGS)
 

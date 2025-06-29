@@ -22,6 +22,7 @@
 #include "ops/meadowphysics.h"
 #include "ops/metronome.h"
 #include "ops/midi.h"
+#include "ops/neatopixel.h"
 #include "ops/orca.h"
 #include "ops/patterns.h"
 #include "ops/queue.h"
@@ -80,13 +81,14 @@ const tele_op_t *tele_ops[E_OP__LENGTH] = {
     &op_Q_MUL, &op_Q_DIV, &op_Q_MOD, &op_Q_I, &op_Q_2P, &op_Q_P2,
 
     // hardware
-    &op_CV, &op_CV_OFF, &op_CV_SLEW, &op_IN, &op_IN_SCALE, &op_PARAM,
+    &op_CV, &op_CV_OFF, &op_CV_SLEW, &op_IN, &op_IN_SCALE, &op_IN_S, &op_PARAM,
     &op_PARAM_SCALE, &op_IN_CAL_MIN, &op_IN_CAL_MAX, &op_IN_CAL_RESET,
-    &op_PARAM_CAL_MIN, &op_PARAM_CAL_MAX, &op_PARAM_CAL_RESET, &op_PRM, &op_TR,
-    &op_TR_POL, &op_TR_TIME, &op_TR_TOG, &op_TR_PULSE, &op_TR_P, &op_CV_SET,
-    &op_MUTE, &op_STATE, &op_DEVICE_FLIP, &op_LIVE_OFF, &op_LIVE_O,
-    &op_LIVE_DASH, &op_LIVE_D, &op_LIVE_GRID, &op_LIVE_G, &op_LIVE_VARS,
-    &op_LIVE_V, &op_PRINT, &op_PRT, &op_CV_GET, &op_CV_CAL, &op_CV_CAL_RESET,
+    &op_PARAM_CAL_MIN, &op_PARAM_CAL_MAX, &op_PARAM_CAL_RESET, &op_PRM,
+    &op_PRM_SCALE, &op_PRM_S, &op_TR, &op_TR_POL, &op_TR_TIME, &op_TR_T,
+    &op_TR_TOG, &op_TR_PULSE, &op_TR_P, &op_CV_SET, &op_MUTE, &op_STATE,
+    &op_DEVICE_FLIP, &op_LIVE_OFF, &op_LIVE_O, &op_LIVE_DASH, &op_LIVE_D,
+    &op_LIVE_GRID, &op_LIVE_G, &op_LIVE_VARS, &op_LIVE_V, &op_PRINT, &op_PRT,
+    &op_CV_GET, &op_CV_CAL, &op_CV_CAL_RESET,
 
     // maths
     &op_ADD, &op_SUB, &op_MUL, &op_DIV, &op_MOD, &op_RAND, &op_RND, &op_RRAND,
@@ -321,7 +323,10 @@ const tele_op_t *tele_ops[E_OP__LENGTH] = {
     &op_MI_LC, &op_MI_LCC, &op_MI_LCCV, &op_MI_NL, &op_MI_N, &op_MI_NV,
     &op_MI_V, &op_MI_VV, &op_MI_OL, &op_MI_O, &op_MI_CL, &op_MI_C, &op_MI_CC,
     &op_MI_CCV, &op_MI_LCH, &op_MI_NCH, &op_MI_OCH, &op_MI_CCH, &op_MI_LE,
-    &op_MI_CLKD, &op_MI_CLKR
+    &op_MI_CLKD, &op_MI_CLKR,
+
+    // neatopixel
+    &op_NP_C, &op_NP_A, &op_NP_AH, &op_NP_P, &op_NP_PH, &op_NP_B
 };
 
 /////////////////////////////////////////////////////////////////
