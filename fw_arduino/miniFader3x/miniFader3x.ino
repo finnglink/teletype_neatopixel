@@ -42,7 +42,7 @@ void setup() {
   Wire.onReceive(i2cReceiveEvent);
   Wire.onRequest(i2cRequestEvent);
 
-
+  Serial.println("I'm alive");
 }
 
 void loop() {

@@ -974,6 +974,15 @@ typedef enum {
     E_OP_NP_P,
     E_OP_NP_PH,
     E_OP_NP_B,
+    E_OP_MF,
+    E_OP_MF_SCALE,
+    E_OP_MF_S,
+    E_OP_MF_CAL_MIN,
+    E_OP_MF_C_MIN,
+    E_OP_MF_CAL_MAX,
+    E_OP_MF_C_MAX,
+    E_OP_MF_CAL_RESET,
+    E_OP_MF_C_R,
     E_OP__LENGTH,
 } tele_op_idx_t;
 
