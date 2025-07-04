@@ -1,11 +1,16 @@
 #include <Wire.h>
+#include <ResponsiveAnalogRead.h>
 
-//#define MF1 2
-//#define MF2 3
-//#define MF3 4
 int MF_PINS[] = {2, 3, 4};
+
+ResponsiveAnalogRead analog1(MF_PINS[0], true, 0.5);
+ResponsiveAnalogRead analog2(MF_PINS[1], true, 0.5);
+ResponsiveAnalogRead analog3(MF_PINS[2], true, 0.5);
+
 int faderNum = 0;
 int faderValue = 0;
+int rawValue = 0;
+static int lastValue = 0;
 
 void i2cReceiveEvent(int count);
 void i2cRequestEvent(void);         
@@ -15,13 +20,21 @@ void i2cRequestEvent(void);
 void i2cReceiveEvent(int count) {
   if (count == 1) {
     faderNum = Wire.read();
-    //Serial.println(faderNum);
-    faderValue = map(analogRead(MF_PINS[faderNum]), 0, 4096, 0, 16383);
-    count = 0;
+    if (faderNum == 0) {
+      rawValue = analog1.getValue();
+    }
+    else if (faderNum == 1) {
+      rawValue = analog2.getValue();
+    }
+    else if (faderNum == 2) {
+      rawValue = analog3.getValue();
+    }
   }
   else {
     return;
   }
+  faderValue = map(rawValue, 0, 4096, 0, 16383);
+  count = 0;
 }
 
 void i2cRequestEvent() {
@@ -42,5 +55,7 @@ void setup() {
 }
 
 void loop() {
-
+  analog1.update();
+  analog2.update();
+  analog3.update();
 }
