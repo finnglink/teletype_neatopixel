@@ -24,7 +24,7 @@ const tele_op_t op_MF_C_MIN = MAKE_ALIAS_OP(MF.C.MIN, op_MF_CAL_MIN_set, NULL, 1
 const tele_op_t op_MF_C_MAX = MAKE_ALIAS_OP(MF.C.MAX, op_MF_CAL_MAX_set, NULL, 1, true);
 const tele_op_t op_MF_C_R = MAKE_ALIAS_OP(MF.C.R, op_MF_CAL_RESET_set, NULL, 1, false);
 
-#define address 0x46;
+#define address 0x46
 
 static int16_t receive_fader(int16_t faderNum) {
     int16_t value = ReceiveValue(address, faderNum);
