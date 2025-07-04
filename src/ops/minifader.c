@@ -51,8 +51,9 @@ static void op_MF_get(const void *NOTUSED(data), scene_state_t *ss, exec_state_t
     tele_ii_rx(address, buffer, 2);
     int16_t value = (buffer[0] << 8) + buffer[1];
 
-    int16_t faderScaleStorage = input + 100;
-    cs_push(cs, scale_get(ss->variables.fader_scales[faderScaleStorage], value));
+    //int16_t faderScaleStorage = input + 100;
+    //cs_push(cs, scale_get(ss->variables.fader_scales[faderScaleStorage], value));
+    cs_push(cs, value);
 }
 
 static void op_MF_SCALE_set(const void *NOTUSED(data), scene_state_t *ss, exec_state_t *NOTUSED(es), command_state_t *cs) {
