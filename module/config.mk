@@ -105,7 +105,8 @@ CSRCS = \
 	../src/ops/matrixarchate.c				\
 	../src/ops/meadowphysics.c				\
 	../src/ops/metronome.c					\
-	../src/ops/neatopixel.o					\
+	../src/ops/minifader.c					\
+	../src/ops/neatopixel.c					\
 	../src/ops/midi.c					\
 	../src/ops/orca.c      					\
 	../src/ops/patterns.c					\

@@ -23,6 +23,7 @@
 #include "ops/metronome.h"
 #include "ops/midi.h"
 #include "ops/neatopixel.h"
+#include "ops/minifader.h"
 #include "ops/orca.h"
 #include "ops/patterns.h"
 #include "ops/queue.h"
@@ -326,7 +327,11 @@ const tele_op_t *tele_ops[E_OP__LENGTH] = {
     &op_MI_CLKD, &op_MI_CLKR,
 
     // neatopixel
-    &op_NP_C, &op_NP_A, &op_NP_AH, &op_NP_P, &op_NP_PH, &op_NP_B
+    &op_NP_C, &op_NP_A, &op_NP_AH, &op_NP_P, &op_NP_PH, &op_NP_B,
+
+    //minifader
+    &op_MF, &op_MF_SCALE, &op_MF_S, &op_MF_CAL_MIN, &op_MF_C_MIN, &op_MF_CAL_MAX, &op_MF_C_MAX,
+    &op_MF_CAL_RESET, &op_MF_C_R
 };
 
 /////////////////////////////////////////////////////////////////
