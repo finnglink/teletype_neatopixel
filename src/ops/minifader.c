@@ -40,7 +40,17 @@ static void op_MF_get(const void *NOTUSED(data), scene_state_t *ss, exec_state_t
         cs_push(cs, 0);
         return;
     }
-    int16_t value = receive_fader(input);
+    //int16_t value = receive_fader(input);
+
+    uint8_t buffer[2];
+    buffer[0] = input;
+    tele_ii_tx(address, buffer, 1);
+    // now read the value
+    buffer[0] = 0;
+    buffer[1] = 0;
+    tele_ii_rx(address, buffer, 2);
+    int16_t value = (buffer[0] << 8) + buffer[1];
+
     int16_t faderScaleStorage = input + 100;
     cs_push(cs, scale_get(ss->variables.fader_scales[faderScaleStorage], value));
 }
