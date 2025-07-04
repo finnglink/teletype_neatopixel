@@ -40,30 +40,17 @@ static void op_MF_get(const void *NOTUSED(data), scene_state_t *ss, exec_state_t
         cs_push(cs, 0);
         return;
     }
-    //int16_t value = receive_fader(input);
-
-    uint8_t buffer[2];
-    buffer[0] = input;
-    tele_ii_tx(address, buffer, 1);
-    // now read the value
-    buffer[0] = 0;
-    buffer[1] = 0;
-    tele_ii_rx(address, buffer, 2);
-    int16_t value = (buffer[0] << 8) + buffer[1];
-
-    //int16_t faderScaleStorage = input + 100;
-    //cs_push(cs, scale_get(ss->variables.fader_scales[faderScaleStorage], value));
-    cs_push(cs, value);
+    int16_t value = receive_fader(input);
+    cs_push(cs, scale_get(ss->variables.fader_scales[input], value));
 }
 
 static void op_MF_SCALE_set(const void *NOTUSED(data), scene_state_t *ss, exec_state_t *NOTUSED(es), command_state_t *cs) {
-    int16_t fader = cs_pop(cs);
+    int16_t input = cs_pop(cs);
     int16_t min = cs_pop(cs);
     int16_t max = cs_pop(cs);
-    fader -= 1;
-    if (fader < 0 || fader > 3) { return; }
-    int16_t faderScaleStorage = fader + 100;
-    ss_set_fader_scale(ss, faderScaleStorage, min, max);
+    input -= 1;
+    if (input < 0 || input > 3) { return; }
+    ss_set_fader_scale(ss, input, min, max);
 }
 
 static void op_MF_CAL_MIN_set(const void *NOTUSED(data), scene_state_t *ss, exec_state_t *NOTUSED(es), command_state_t *cs) {
@@ -76,8 +63,7 @@ static void op_MF_CAL_MIN_set(const void *NOTUSED(data), scene_state_t *ss, exec
         return;
     }
     int16_t value = receive_fader(input);
-    int16_t faderScaleStorage = input + 100;
-    ss_set_fader_min(ss, faderScaleStorage, value);
+    ss_set_fader_min(ss, input, value);
     cs_push(cs, value);
 }
 
@@ -91,17 +77,15 @@ static void op_MF_CAL_MAX_set(const void *NOTUSED(data), scene_state_t *ss, exec
         return;
     }
     int16_t value = receive_fader(input);
-    int16_t faderScaleStorage = input + 100;
-    ss_set_fader_max(ss, faderScaleStorage, value);
+    ss_set_fader_max(ss, input, value);
     cs_push(cs, value);
 }
 
 static void op_MF_CAL_RESET_set(const void *NOTUSED(data), scene_state_t *ss, exec_state_t *NOTUSED(es), command_state_t *cs) {
-    uint16_t fader = cs_pop(cs);
+    uint16_t input = cs_pop(cs);
     // zero-index the input
-    fader -= 1;
+    input -= 1;
     // return if out of range
-    if (fader < 0 || fader > 3) { return; }
-    int16_t faderScaleStorage = fader + 100;
-    ss_reset_fader_cal(ss, faderScaleStorage);
+    if (input < 0 || input > 3) { return; }
+    ss_reset_fader_cal(ss, input);
 }
