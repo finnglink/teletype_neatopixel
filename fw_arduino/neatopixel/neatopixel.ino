@@ -36,13 +36,13 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Serial OK");
 
-  Wire.begin(I2C_ADDRESS);  
+  Wire.begin(I2C_ADDRESS, 6, 7, 400000);
   Serial.print("I2C initialized: ");
 
   received = 0;                                    // i2c data initalize
   memset(i2cData, 0, sizeof(i2cData));             // save I2C data in memory
   Wire.onReceive(i2cReceiveEvent);
-  //Wire.onRequest(i2cRequestEvent);
+  Wire.onRequest(i2cRequestEvent);
 
   FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
   FastLED.clear(true);
