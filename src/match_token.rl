@@ -1119,17 +1119,6 @@
         "NP.P"        => { MATCH_OP(E_OP_NP_P); };
         "NP.PH"        => { MATCH_OP(E_OP_NP_PH); };
         "NP.B"        => { MATCH_OP(E_OP_NP_B); };
-
-        # fader
-        "MF"            => { MATCH_OP(E_OP_MF); };
-        "MF.SCALE"      => { MATCH_OP(E_OP_MF_SCALE); };
-        "MF.CAL.MIN"    => { MATCH_OP(E_OP_MF_CAL_MIN); };
-        "MF.CAL.MAX"    => { MATCH_OP(E_OP_MF_CAL_MAX); };
-        "MF.CAL.RESET"  => { MATCH_OP(E_OP_MF_CAL_RESET); };
-        "MF.S"             => { MATCH_OP(E_OP_MF_S); };
-        "MF.C.MIN"         => { MATCH_OP(E_OP_MF_C_MIN); };
-        "MF.C.MAX"         => { MATCH_OP(E_OP_MF_C_MAX); };
-        "MF.C.R"           => { MATCH_OP(E_OP_MF_C_R); };
     *|;
 
     write data;          # write any ragel data here
