@@ -483,6 +483,7 @@
         "JF.TICK"       => { MATCH_OP(E_OP_JF_TICK); };
         "JF.VOX"        => { MATCH_OP(E_OP_JF_VOX); };
         "JF.NOTE"       => { MATCH_OP(E_OP_JF_NOTE); };
+        "JF.N"          => { MATCH_OP(E_OP_JF_N); };
         "JF.GOD"        => { MATCH_OP(E_OP_JF_GOD); };
         "JF.TUNE"       => { MATCH_OP(E_OP_JF_TUNE); };
         "JF.QT"         => { MATCH_OP(E_OP_JF_QT); };

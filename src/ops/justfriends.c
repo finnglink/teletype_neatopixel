@@ -76,6 +76,7 @@ const tele_op_t op_JF_MODE        = MAKE_GET_OP(JF.MODE      , op_JF_MODE_get   
 const tele_op_t op_JF_TICK        = MAKE_GET_OP(JF.TICK      , op_JF_TICK_get      , 1, false);
 const tele_op_t op_JF_VOX         = MAKE_GET_OP(JF.VOX       , op_JF_VOX_get       , 3, false);
 const tele_op_t op_JF_NOTE        = MAKE_GET_OP(JF.NOTE      , op_JF_NOTE_get      , 2, false);
+const tele_op_t op_JF_N           = MAKE_ALIAS_OP(JF.N       , op_JF_NOTE_get, NULL, 2, false);
 const tele_op_t op_JF_GOD         = MAKE_GET_OP(JF.GOD       , op_JF_GOD_get       , 1, false);
 const tele_op_t op_JF_TUNE        = MAKE_GET_OP(JF.TUNE      , op_JF_TUNE_get      , 3, false);
 const tele_op_t op_JF_QT          = MAKE_GET_OP(JF.QT        , op_JF_QT_get        , 1, false);

@@ -163,7 +163,7 @@ const tele_op_t *tele_ops[E_OP__LENGTH] = {
 
     // justfriends
     &op_JF_TR, &op_JF_RMODE, &op_JF_RUN, &op_JF_SHIFT, &op_JF_VTR, &op_JF_MODE,
-    &op_JF_TICK, &op_JF_VOX, &op_JF_NOTE, &op_JF_GOD, &op_JF_TUNE, &op_JF_QT,
+    &op_JF_TICK, &op_JF_VOX, &op_JF_NOTE, &op_JF_N, &op_JF_GOD, &op_JF_TUNE, &op_JF_QT,
     &op_JF_PITCH, &op_JF_ADDR, &op_JF_SPEED, &op_JF_TSC, &op_JF_RAMP,
     &op_JF_CURVE, &op_JF_FM, &op_JF_TIME, &op_JF_INTONE, &op_JF_POLY,
     &op_JF_POLY_RESET, &op_JF_SEL,

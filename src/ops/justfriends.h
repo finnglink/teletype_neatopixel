@@ -16,6 +16,7 @@ extern const tele_op_t op_JF_MODE;
 extern const tele_op_t op_JF_TICK;
 extern const tele_op_t op_JF_VOX;
 extern const tele_op_t op_JF_NOTE;
+extern const tele_op_t op_JF_N;
 extern const tele_op_t op_JF_GOD;
 extern const tele_op_t op_JF_TUNE;
 extern const tele_op_t op_JF_QT;
